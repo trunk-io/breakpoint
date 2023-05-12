@@ -1,0 +1,28 @@
+version: 0.1
+cli:
+  version: 1.9.1
+plugins:
+  sources:
+    - id: trunk
+      ref: v0.0.17
+      uri: https://github.com/trunk-io/plugins
+lint:
+  enabled:
+    - git-diff-check
+    - gitleaks@8.16.3
+    - markdownlint@0.34.0
+    - prettier@2.8.8
+    - yamllint@1.31.0
+runtimes:
+  enabled:
+    - go@1.19.5
+    - node@18.12.1
+    - python@3.10.8
+actions:
+  enabled:
+    - trunk-announce
+    - trunk-check-pre-push
+    - trunk-fmt-pre-commit
+    - trunk-upgrade-available
+api:
+  address: api.trunk-staging.io:8443

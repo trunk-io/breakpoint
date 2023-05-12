@@ -1,0 +1,22 @@
+name: Breakpoint
+description: Set up a trunk breakpoint
+inputs:
+  breakpoint_id: # id of breakpoint
+    description: Which breakpoint to trigger
+    required: true
+  command: # Command to run
+    description: Which command to run
+    required: true
+  trunk_token:
+    description: API key for trunk. Should be in your secrets
+    required: true
+runs:
+  using: composite
+  steps:
+    - run: trunk breakpoint --id="${{ inputs.breakpoint_id }}" -- ${{ inputs.command }}
+      shell: bash
+      env:
+        TRUNK_GITHUB_CONTEXT: ${{ toJSON(github) }}
+        INPUT_TRUNK_TOKEN: ${{ inputs.trunk_token }}
+        SHELL: bash
+        GH_TOKEN: ${{ github.token }}
