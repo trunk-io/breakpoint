@@ -20,3 +20,4 @@ runs:
         INPUT_TRUNK_TOKEN: ${{ inputs.trunk_token }}
         SHELL: bash
         GH_TOKEN: ${{ github.token }}
+        TRUNK_LAUNCHER_QUIET: 1
