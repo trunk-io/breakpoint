@@ -4,8 +4,8 @@ inputs:
   breakpoint_id: # id of breakpoint
     description: Which breakpoint to trigger
     required: true
-  command: # Command to run
-    description: Which command to run
+  run: # Command to run
+    description: Command-line to run using the operating system's shell
     required: true
   trunk_token:
     description: API key for trunk. Should be in your secrets
@@ -13,7 +13,7 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: trunk breakpoint --id="${{ inputs.breakpoint_id }}" -- ${{ inputs.command }}
+    - run: trunk breakpoint --id="${{ inputs.breakpoint_id }}" -- ${{ inputs.run }}
       shell: bash
       env:
         TRUNK_GITHUB_CONTEXT: ${{ toJSON(github) }}
