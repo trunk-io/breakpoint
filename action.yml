@@ -4,20 +4,30 @@ inputs:
   breakpoint_id: # id of breakpoint
     description: Which breakpoint to trigger
     required: true
-  command: # Command to run
+  run: # Command to run
     description: Which command to run
     required: true
   trunk_token:
     description: API key for trunk. Should be in your secrets
     required: true
+  debug:
+    description: Add debug level logs
+    default: false
+    required: false
+  shell:
+    description: Which shell to run with
+    default: bash
+    required: false
 runs:
   using: composite
   steps:
-    - run: trunk breakpoint --id="${{ inputs.breakpoint_id }}" -- ${{ inputs.command }}
-      shell: bash
+    - run: |
+        echo "${{ inputs.run }}" > trunk_bp_run.sh
+        trunk breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint_id }}" -- ${{ inputs.shell }} trunk_bp_run.sh
+      shell: ${{ inputs.shell }}
       env:
         TRUNK_GITHUB_CONTEXT: ${{ toJSON(github) }}
         INPUT_TRUNK_TOKEN: ${{ inputs.trunk_token }}
-        SHELL: bash
+        SHELL: ${{ inputs.shell }}
         GH_TOKEN: ${{ github.token }}
         TRUNK_LAUNCHER_QUIET: 1
