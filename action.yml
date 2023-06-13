@@ -27,7 +27,7 @@ runs:
       shell: ${{ inputs.shell }}
       env:
         TRUNK_GITHUB_CONTEXT: ${{ toJSON(github) }}
-        INPUT_TRUNK_TOKEN: ${{ inputs.trunk_token }}
+        TRUNK_TOKEN: ${{ inputs.trunk_token }}
         SHELL: ${{ inputs.shell }}
         GH_TOKEN: ${{ github.token }}
         TRUNK_LAUNCHER_QUIET: 1
