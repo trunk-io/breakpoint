@@ -22,8 +22,7 @@ runs:
   using: composite
   steps:
     - run: |
-        echo "${{ inputs.run }}" > trunk_bp_run.sh
-        trunk breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint_id }}" -- ${{ inputs.shell }} trunk_bp_run.sh
+        trunk breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint_id }}" -- "${{ inputs.run }}"
       shell: ${{ inputs.shell }}
       env:
         TRUNK_GITHUB_CONTEXT: ${{ toJSON(github) }}
