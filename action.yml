@@ -1,5 +1,5 @@
 name: trunk breakpoint
-description: Set conditional debugger breakpoints for your GitHub Actions. Securely pause/debug/resume your jobs
+description: Set conditional breakpoints for your GitHub Actions. Securely pause/debug/resume your jobs
 author: trunk.io
 branding:
   icon: terminal
