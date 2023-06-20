@@ -1,5 +1,9 @@
-name: Breakpoint
-description: Set up a trunk breakpoint
+name: trunk breakpoint
+description: Conditional debugger breakpoints for your GitHub Actions. Securely pause/debug/resume your jobs
+author: trunk.io
+branding:
+  icon: terminal
+  color: gray-dark
 inputs:
   breakpoint_id: # id of breakpoint
     description: Which breakpoint to trigger
