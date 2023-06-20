@@ -1,4 +1,4 @@
-# breakpoint for Trunk CI Debugger
+![GitHub Breakpoint](https://github.com/trunk-io/breakpoint/assets/1265982/8a38229b-80d8-4752-bcf2-a7e86e94342b)
 Hosts the code for the Trunk Breakpoint GitHub Action. To get beta access, [sign-up here](https://www.ci-debugger.io?ref=README)
 
 ## Overview
