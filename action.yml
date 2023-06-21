@@ -29,6 +29,7 @@ runs:
         trunk breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint_id }}" -- "${{ inputs.run }}"
       shell: ${{ inputs.shell }}
       env:
+        TRUNK_CLI_VERSION: 1.11.0
         TRUNK_GITHUB_CONTEXT: ${{ toJSON(github) }}
         TRUNK_TOKEN: ${{ inputs.trunk_token }}
         SHELL: ${{ inputs.shell }}
