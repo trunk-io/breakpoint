@@ -32,6 +32,7 @@ runs:
       run: ${GITHUB_ACTION_PATH}/locate_trunk.sh
       env:
         INPUT_TRUNK_PATH: ${{ inputs.trunk-path }}
+        TRUNK_CLI_VERSION: 1.11.0
 
     - name: Run affected tests
       run: |
