@@ -1,0 +1,22 @@
+name: Pull Request
+on:
+  - pull_request
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Testing code
+        uses: trunk-io/breakpoint@f84393bca7caa914411960cc6e8093205489a67f
+        env:
+          TRUNK_API_ADDRESS: api.trunk-staging.io:8443
+          TRUNK_CLI_VERSION: 1.11.0
+        with:
+          breakpoint-id: run-tests
+          run: ./tests/run_tests
+          trunk-token: ${{ secrets.TRUNK_TOKEN }}
