@@ -35,7 +35,7 @@ runs:
 
     - name: Run affected tests
       run: |
-        trunk breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint-id }}" -- "${{ inputs.run }}"
+        ${TRUNK_PATH} breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint-id }}" -- "${{ inputs.run }}"
       shell: ${{ inputs.shell }}
       env:
         TRUNK_GITHUB_CONTEXT: ${{ toJSON(github) }}
