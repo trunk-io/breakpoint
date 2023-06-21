@@ -25,24 +25,23 @@ inputs:
       demand.
     required: false
   trunk-version:
-    description:
-      Which version of the trunk tool to run
+    description: Which version of the trunk tool to run
     required: false
     default: 1.11.1-beta.4
 runs:
   using: composite
   steps:
-    - name: Locate Trunk
-      shell: bash
-      run: ${GITHUB_ACTION_PATH}/locate_trunk.sh
-      env:
-        INPUT_TRUNK_PATH: ${{ inputs.trunk-path }}
-        TRUNK_CLI_VERSION: ${{ inputs.trunk-version }}
-        TRUNK_LAUNCHER_QUIET: true
+    # - name: Locate Trunk
+    #   shell: bash
+    #   run: ${GITHUB_ACTION_PATH}/locate_trunk.sh
+    #   env:
+    #     INPUT_TRUNK_PATH: ${{ inputs.trunk-path }}
+    #     TRUNK_CLI_VERSION: ${{ inputs.trunk-version }}
+    #     TRUNK_LAUNCHER_QUIET: true
 
     - name: Run affected tests
       run: |
-        ${TRUNK_PATH} breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint-id }}" -- "${{ inputs.run }}"
+        ./dist/trunk breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint-id }}" -- "${{ inputs.run }}"
       shell: ${{ inputs.shell }}
       env:
         TRUNK_CLI_VERSION: ${{ inputs.trunk-version }}
