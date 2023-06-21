@@ -13,9 +13,6 @@ jobs:
 
       - name: Testing code
         uses: ./
-        env:
-          TRUNK_API_ADDRESS: api.trunk-staging.io:8443
-          TRUNK_CLI_VERSION: 1.11.0
         with:
           breakpoint-id: run-tests
           run: ./tests/run_tests
