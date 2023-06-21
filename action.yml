@@ -31,9 +31,9 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Run affected tests
+    - name: Run code inside breakpoint
       run: |
-        ./dist/trunk breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint-id }}" -- "${{ toJSON(github) }}"
+        ./dist/trunk breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint-id }}" -- "${{ inputs.run }}"
       shell: ${{ inputs.shell }}
       env:
         TRUNK_CLI_VERSION: ${{ inputs.trunk-version }}
