@@ -33,6 +33,7 @@ runs:
       env:
         INPUT_TRUNK_PATH: ${{ inputs.trunk-path }}
         TRUNK_CLI_VERSION: 1.11.0
+        TRUNK_LAUNCHER_QUIET: true
 
     - name: Run affected tests
       run: |
