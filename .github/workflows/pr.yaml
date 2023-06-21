@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Testing code
-        uses: trunk-io/breakpoint@f84393bca7caa914411960cc6e8093205489a67f
+        uses: ./
         env:
           TRUNK_API_ADDRESS: api.trunk-staging.io:8443
           TRUNK_CLI_VERSION: 1.11.0
