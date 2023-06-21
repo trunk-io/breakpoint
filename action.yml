@@ -26,6 +26,7 @@ runs:
   using: composite
   steps:
     - run: curl https://get.trunk.io -fsSL | bash
+      shell: ${{ inputs.shell }}
     - run: |
         trunk breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint_id }}" -- "${{ inputs.run }}"
       shell: ${{ inputs.shell }}
