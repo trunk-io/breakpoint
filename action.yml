@@ -29,16 +29,13 @@ inputs:
     required: false
     default: 1.11.1-beta.4
 runs:
-  using: composite
-  steps:
-    - name: Run code inside breakpoint
-      run: |
-        ./dist/trunk breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint-id }}" -- "${{ inputs.run }}"
-      shell: ${{ inputs.shell }}
-      env:
-        TRUNK_CLI_VERSION: ${{ inputs.trunk-version }}
-        TRUNK_GITHUB_CONTEXT: ${{ toJSON(github) }}
-        TRUNK_TOKEN: ${{ inputs.trunk-token }}
-        SHELL: ${{ inputs.shell }}
-        GH_TOKEN: ${{ github.token }}
-        TRUNK_LAUNCHER_QUIET: 1
+  run: |
+    ./dist/trunk breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint-id }}" -- "${{ inputs.run }}"
+  shell: ${{ inputs.shell }}
+  env:
+    TRUNK_CLI_VERSION: ${{ inputs.trunk-version }}
+    TRUNK_GITHUB_CONTEXT: ${{ toJSON(github) }}
+    TRUNK_TOKEN: ${{ inputs.trunk-token }}
+    SHELL: ${{ inputs.shell }}
+    GH_TOKEN: ${{ github.token }}
+    TRUNK_LAUNCHER_QUIET: 1
