@@ -41,7 +41,7 @@ runs:
     - run: |
         echo "$GITHUB_WORKSPACE/dist" >> "${GITHUB_PATH}"
         echo "$GITHUB_WORKSPACE/dist"
-        trunk breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint-id }}" -- "${{ inputs.run }}"
+        $GITHUB_WORKSPACE/dist/trunk breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint-id }}" -- "${{ inputs.run }}"
       shell: ${{ inputs.shell }}
       env:
         TRUNK_CLI_VERSION: ${{ inputs.trunk-version }}
