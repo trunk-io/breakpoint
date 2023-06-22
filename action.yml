@@ -34,6 +34,8 @@ runs:
     - name: Get trunk debugger
       shell: bash
       run: ${GITHUB_ACTION_PATH}/get-trunk
+      env:
+        INPUT_TRUNK_PATH: ${{ inputs.trunk-path }}
 
     - name: Run affected tests
       run: |
