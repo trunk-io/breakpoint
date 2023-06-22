@@ -2,10 +2,34 @@
 Hosts the code for the Trunk Breakpoint GitHub Action. To get beta access, [sign-up here](https://www.ci-debugger.io?ref=README)
 
 ## Overview
+
 Trunk CI Debugger (beta invite required) is available at [app.trunk.io](https://app.trunk.io). With a sprinkling of code you can enable live debugging of your CI actions enabling real-time diagnosis, troubleshooting, and of course debugging of your otherwise ephemeral CI job.
 
 ## How does it work?
+
 At its most basic - the trunk ci debugger wraps the execution of whatever command you give it. This allows the debugger to break `on_enter` before running your command and `on_exit` after your command completes. This wrapper connects to the Trunk Service to determine in real time based on the conditional rules whether to trigger a breakpoint or continue execution.
+
+# Usage
+
+<!-- start usage -->
+
+```yaml
+- uses: trunk-io/breakpoint@v1
+  with:
+    # Name of the conditional breakpoint to trigger against
+    breakpoint-id: ""
+
+    # Command to run wrapped inside the breakpoint. For example if you want to debug
+    # a unit test - this would be the command you execute to run your unit test.
+    run: ""
+
+    # Trunk API token used to communicate with trunk web services. The token enables the
+    # trunk ci debugger to run conditional breakpoint evaluation and support live debugging
+    # of your GitHub action
+    trunk-token: ""
+```
+
+<!-- end usage -->
 
 ### What happens a breakpoint is triggered?
 
@@ -15,7 +39,7 @@ The notification will include a link to connect to the debugging session and pro
 
 ### What can I do during a debug session?
 
-Anything! When connected over a debug session, you have live access to the terminal that is running your CI job; you are connecting to the live instance that is being used to run your job. 
+Anything! When connected over a debug session, you have live access to the terminal that is running your CI job; you are connecting to the live instance that is being used to run your job.
 
 Besides running any normal shell command from the session, the debugger provides a set of command line tooling to further assist your debugging session.
 
