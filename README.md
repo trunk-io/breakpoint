@@ -23,9 +23,9 @@ At its most basic - the trunk ci debugger wraps the execution of whatever comman
     # a unit test - this would be the command you execute to run your unit test.
     run: ""
 
-    # Trunk API token used to communicate with trunk web services. The token enables the
-    # trunk ci debugger to run conditional breakpoint evaluation and support live debugging
-    # of your GitHub action
+    # Trunk API token used to communicate with trunk web services. The token
+    # enables the trunk ci debugger to run conditional breakpoint evaluation
+    # and support live debugging of your GitHub action
     trunk-token: ""
 ```
 
