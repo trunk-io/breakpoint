@@ -1,14 +1,16 @@
 version: 0.1
 cli:
-  version: 1.11.0
+  version: 1.11.1
 plugins:
   sources:
     - id: trunk
-      ref: v0.0.18
+      ref: v0.0.19
       uri: https://github.com/trunk-io/plugins
 lint:
   enabled:
-    - checkov@2.3.291
+    - shellcheck@0.9.0
+    - shfmt@3.6.0
+    - checkov@2.3.300
     - trivy@0.42.1
     - trufflehog@3.40.0
     - git-diff-check
@@ -27,5 +29,3 @@ actions:
     - trunk-check-pre-push
     - trunk-fmt-pre-commit
     - trunk-upgrade-available
-api:
-  address: api.trunk-staging.io:8443
