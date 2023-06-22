@@ -37,7 +37,7 @@ runs:
       env:
         INPUT_TRUNK_PATH: ${{ inputs.trunk-path }}
 
-    - name: Run affected tests
+    - name: Run command inside debugger
       run: |
         ${TRUNK_PATH} breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint-id }}" -- "${{ inputs.run }}"
       shell: ${{ inputs.shell }}
