@@ -31,13 +31,9 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Get trunk debugger
-      shell: bash
-      run: echo ${GITHUB_ACTION_PATH}/dist >> ${GITHUB_PATH}
-
     - name: Run command inside debugger
       run: |
-        trunk breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint-id }}" -- "${{ inputs.run }}"
+        ${GITHUB_ACTION_PATH}/trunk breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint-id }}" -- "${{ inputs.run }}"
       shell: ${{ inputs.shell }}
       env:
         TRUNK_CLI_VERSION: ${{ inputs.trunk-version }}
