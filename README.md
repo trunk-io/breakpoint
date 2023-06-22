@@ -16,10 +16,10 @@ At its most basic - the trunk ci debugger wraps the execution of whatever comman
 ```yaml
 - uses: trunk-io/breakpoint@v1
   with:
-    # Name of the conditional breakpoint to trigger against
+    # Name of the conditional breakpoint
     breakpoint-id: ""
 
-    # Command to run wrapped inside the breakpoint. For example if you want to debug
+    # Command to run inside the breakpoint. For example if you want to debug
     # a unit test - this would be the command you execute to run your unit test.
     run: ""
 
