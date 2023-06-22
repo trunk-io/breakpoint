@@ -9,7 +9,7 @@ Trunk CI Debugger (beta invite required) is available at [app.trunk.io](https://
 
 At its most basic - the trunk ci debugger wraps the execution of whatever command you give it. This allows the debugger to break `on_enter` before running your command and `on_exit` after your command completes. This wrapper connects to the Trunk Service to determine in real time based on the conditional rules whether to trigger a breakpoint or continue execution.
 
-# Usage
+## Usage
 
 <!-- start usage -->
 
