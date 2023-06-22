@@ -39,7 +39,7 @@ runs:
 
     - name: set path
       shell: bash
-      run: ${GITHUB_ACTION_PATH}/dist >> ${GITHUB_PATH}
+      run: echo ${GITHUB_ACTION_PATH}/dist >> ${GITHUB_PATH}
 
     - name: vall ver
       shell: bash
