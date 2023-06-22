@@ -36,6 +36,7 @@ runs:
       run: ${GITHUB_ACTION_PATH}/dist/trunk
       env:
         INPUT_TRUNK_PATH: ${{ inputs.trunk-path }}
+        TRUNK_LAUNCHER_QUIET: 1
 
     - name: set path
       shell: bash
