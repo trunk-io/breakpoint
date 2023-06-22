@@ -40,12 +40,12 @@ runs:
     - name: set path
       shell: bash
       run: ${GITHUB_ACTION_PATH}/dist >> ${GITHUB_PATH}
-      env:
-        INPUT_TRUNK_PATH: ${{ inputs.trunk-path }}
 
     - name: vall ver
       shell: bash
       run: trunk version
+      env:
+        TRUNK_LAUNCHER_QUIET: 1
 
     - name: Run command inside debugger
       run: |
