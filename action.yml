@@ -34,7 +34,7 @@ inputs:
   trunk-version:
     description: Which version of the trunk tool to run
     required: false
-    default: 1.11.2-beta.21
+    default: 1.11.2-beta.27
 runs:
   using: composite
   steps:
