@@ -27,6 +27,9 @@ At its most basic - the trunk ci debugger wraps the execution of whatever comman
     # enables the trunk ci debugger to run conditional breakpoint evaluation
     # and support live debugging of your GitHub action
     trunk-token: ""
+
+    # Organization connected to the provided trunk-token.
+    org: ""
 ```
 
 <!-- end usage -->
