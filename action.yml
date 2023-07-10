@@ -35,6 +35,10 @@ inputs:
     description: Which version of the trunk tool to run
     required: false
     default: 1.11.2-beta.27
+  working-directory:
+    description: Working directory of breakpoint
+    required: false
+    default: ./
 runs:
   using: composite
   steps:
@@ -46,6 +50,7 @@ runs:
           ${GITHUB_ACTION_PATH}/trunk breakpoint --debug=${{ inputs.debug }} --id="${{ inputs.breakpoint-id }}" -- "${{ inputs.run }}"
         fi
       shell: ${{ inputs.shell }}
+      working-directory: ${{ inputs.working-directory }}
       env:
         TRUNK_CLI_VERSION: ${{ inputs.trunk-version }}
         TRUNK_GITHUB_CONTEXT: ${{ toJSON(github) }}
