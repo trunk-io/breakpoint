@@ -34,7 +34,7 @@ inputs:
   trunk-version:
     description: Which version of the trunk tool to run
     required: false
-    default: 1.11.2-beta.27
+    default: 1.16.3-beta.5
   working-directory:
     description: Working directory of breakpoint
     required: false
