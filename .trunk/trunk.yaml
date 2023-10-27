@@ -13,7 +13,7 @@ lint:
     - shfmt@3.6.0
     - checkov@2.5.9
     - trivy@0.46.0
-    - trufflehog@3.60.0
+    - trufflehog@3.60.4
     - git-diff-check
     - gitleaks@8.18.0
     - markdownlint@0.37.0
