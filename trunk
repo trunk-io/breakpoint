@@ -8,6 +8,9 @@
 
 set -euo pipefail
 
+# DO NOT LAND
+echo -e "Hello from the trunk launcher"
+
 readonly TRUNK_LAUNCHER_VERSION="1.2.6" # warning: this line is auto-updated
 
 readonly SUCCESS_MARK="\033[0;32m✔\033[0m"
