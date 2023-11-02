@@ -46,17 +46,25 @@ echo -e "Stop point 1"
 # [0K is "erase display" and clears from the cursor to the end of the screen
 readonly CLEAR_LAST_MSG="\033[1F\033[0K"
 
+echo -e "Stop point 1.1"
+
 if [[ ! -z ${CI:-} && "${CI}" = true && -z ${TRUNK_LAUNCHER_QUIET:-} ]]; then
   TRUNK_LAUNCHER_QUIET=1
 else
   TRUNK_LAUNCHER_QUIET=${TRUNK_LAUNCHER_QUIET:-${TRUNK_QUIET:-false}}
 fi
 
+echo -e "Stop point 1.2"
+
 readonly TRUNK_LAUNCHER_DEBUG
+
+echo -e "Stop point 1.3"
 
 if [[ ${TRUNK_LAUNCHER_QUIET} != false ]]; then
   exec 3>&1 4>&2 &>/dev/null
 fi
+
+echo -e "Stop point 1.4"
 
 TRUNK_CACHE="${TRUNK_CACHE:-}"
 if [[ -n ${TRUNK_CACHE} ]]; then
@@ -74,7 +82,6 @@ readonly CLI_DIR="${TRUNK_CACHE}/cli"
 mkdir -p "${CLI_DIR}"
 
 echo -e "Stop point 3"
-
 
 # platform check
 readonly MINIMUM_MACOS_VERSION="10.15"
