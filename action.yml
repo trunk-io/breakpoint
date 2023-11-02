@@ -25,6 +25,10 @@ inputs:
   org:
     description: Which organization the breakpoint is associated with
     required: false
+  trunk-launcher-quiet:
+    description: Debug of launcher
+    required: false
+    default: 1
   trunk-path:
     description:
       Path to Trunk Launcher. If not provided, we'll look for it the repo root, `.trunk/bin` and
@@ -57,4 +61,4 @@ runs:
         TRUNK_TOKEN: ${{ inputs.trunk-token }}
         SHELL: ${{ inputs.shell }}
         GH_TOKEN: ${{ github.token }}
-        TRUNK_LAUNCHER_QUIET: 1
+        TRUNK_LAUNCHER_QUIET: ${{ inputs.trunk-launcher-quiet }}
