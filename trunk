@@ -443,6 +443,8 @@ fi
 # Therefore, run cleanup manually here.
 cleanup 0
 
+echo -e "Running ${TOOL_DIR}/trunk $@";
+
 exec \
   env TRUNK_LAUNCHER_VERSION="${TRUNK_LAUNCHER_VERSION}" \
   env TRUNK_LAUNCHER_PATH="${BASH_SOURCE[0]}" \
