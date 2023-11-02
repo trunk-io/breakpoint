@@ -60,6 +60,8 @@ readonly TRUNK_LAUNCHER_DEBUG
 
 echo -e "Stop point 1.3"
 
+echo -e "TRUNK_LAUNCHER_QUIET: ${TRUNK_LAUNCHER_QUIET}"
+
 if [[ ${TRUNK_LAUNCHER_QUIET} != false ]]; then
   exec 3>&1 4>&2 &>/dev/null
 fi
