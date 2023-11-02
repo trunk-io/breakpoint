@@ -39,6 +39,8 @@ readonly PLATFORM
 PLATFORM_UNDERSCORE="${KERNEL}_${MACHINE}"
 readonly PLATFORM_UNDERSCORE
 
+echo -e "Stop point 1"
+
 # https://en.wikipedia.org/wiki/ANSI_escape_code#CSI_(Control_Sequence_Introducer)_sequences
 # [nF is "cursor previous line" and moves to the beginning of the nth previous line
 # [0K is "erase display" and clears from the cursor to the end of the screen
@@ -64,9 +66,15 @@ elif [[ -n ${XDG_CACHE_HOME:-} ]]; then
 else
   TRUNK_CACHE="${HOME}/.cache/trunk"
 fi
+
+echo -e "Stop point 2"
+
 readonly TRUNK_CACHE
 readonly CLI_DIR="${TRUNK_CACHE}/cli"
 mkdir -p "${CLI_DIR}"
+
+echo -e "Stop point 3"
+
 
 # platform check
 readonly MINIMUM_MACOS_VERSION="10.15"
@@ -97,6 +105,8 @@ else
   exit 1
 fi
 
+echo -e "Stop point 4"
+
 TRUNK_TMPDIR="${TMPDIR}/trunk-$(
   set -e
   id -u
@@ -115,6 +125,8 @@ cleanup() {
   fi
 }
 trap 'cleanup $?' EXIT
+
+echo -e "Stop point 5"
 
 # e.g. 2022-02-16-20-40-31-0800
 dt_str() { date +"%Y-%m-%d-%H-%M-%S%z"; }
@@ -167,6 +179,8 @@ awk_test() {
   exit 1
 }
 awk_test
+
+echo -e "Stop point 6"
 
 readonly CURL_FLAGS="${CURL_FLAGS:- -vvv --max-time 120 --retry 3 --fail}"
 readonly WGET_FLAGS="${WGET_FLAGS:- --verbose --tries=3 --limit-rate=10M}"
@@ -231,6 +245,8 @@ else
   }
 fi
 
+echo -e "Stop point 7"
+
 download_url() {
   local url="${1}"
   local output_to="${2}"
@@ -281,6 +297,8 @@ else
     exit 1
   }
 fi
+
+echo -e "Stop point 8"
 
 ###############################################################################
 #                                                                             #
@@ -438,6 +456,8 @@ fi
 if [[ -n ${LATEST_FILE:-} ]]; then
   mv -n "${LATEST_FILE}" "${TOOL_DIR}/version" >/dev/null 2>&1 || true
 fi
+
+echo -e "Stop point 9"
 
 # NOTE: exec will overwrite the process image, so trap will not catch the exit signal.
 # Therefore, run cleanup manually here.
