@@ -31,10 +31,6 @@ inputs:
       `tools/`. If it can't be found anywhere and is not provided explicitly, we'll download it on
       demand.
     required: false
-  trunk-version:
-    description: Which version of the trunk tool to run
-    required: false
-    default: 1.17.1
   working-directory:
     description: Working directory of breakpoint
     required: false
@@ -52,7 +48,6 @@ runs:
       shell: ${{ inputs.shell }}
       working-directory: ${{ inputs.working-directory }}
       env:
-        TRUNK_CLI_VERSION: ${{ inputs.trunk-version }}
         TRUNK_GITHUB_CONTEXT: ${{ toJSON(github) }}
         TRUNK_TOKEN: ${{ inputs.trunk-token }}
         SHELL: ${{ inputs.shell }}
