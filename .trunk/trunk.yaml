@@ -11,13 +11,13 @@ lint:
     - actionlint@1.6.26
     - shellcheck@0.9.0
     - shfmt@3.6.0
-    - checkov@3.1.61
+    - checkov@3.1.67
     - trivy@0.48.3
-    - trufflehog@3.63.9
+    - trufflehog@3.63.10
     - git-diff-check
     - gitleaks@8.18.1
     - markdownlint@0.38.0
-    - prettier@3.2.2
+    - prettier@3.2.4
     - yamllint@1.33.0
 runtimes:
   enabled:
