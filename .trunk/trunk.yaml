@@ -11,7 +11,7 @@ lint:
     - actionlint@1.7.1
     - shellcheck@0.10.0
     - shfmt@3.6.0
-    - checkov@3.2.114
+    - checkov@3.2.120
     - trivy@0.51.4
     - trufflehog@3.77.0
     - git-diff-check
